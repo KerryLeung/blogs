@@ -101,3 +101,5 @@ friends: [
         href: "https://developer.google.com/"
     }
 ]
+
+theme: jekyll-theme-hacker

@@ -4,7 +4,7 @@ SEOTitle: 多写多学 | Tech Blog
 header-img: img/post-bg-desk.jpg
 email: langyanmudi@gmail.com
 description: "技术成长之地，坚持、克制、输出、成长"
-keyword: "kliang, kliang Blog, kliang的博客, golang, 结构"
+keyword: "KL, KL Blog, KL的博客, golang, 结构"
 url: "https://newdeamon.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/newdeamon/newdeamon.github.io" # you code repository

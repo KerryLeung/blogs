@@ -3,7 +3,7 @@ layout:     post
 title:      Golang Mysql数据map到自定义结构体     
 subtitle:   通用函数
 date:       2018-09-16            
-author:     kliang                  
+author:     KL                  
 header-img: img/post-bg-2015.jpg    
 catalog: true                      
 tags:                            

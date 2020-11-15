@@ -3,7 +3,7 @@ layout:     post
 title:      Hive 查询优化的几种方法（转载）
 subtitle:   bloom filter, index and statistics
 date:       2018-11-11             
-author:     kliang                  
+author:     KL                  
 header-img: img/post-bg-2015.jpg    
 catalog: true                      
 tags:                            

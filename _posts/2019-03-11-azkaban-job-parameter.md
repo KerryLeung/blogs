@@ -3,7 +3,7 @@ layout:     post
 title:      在二进制binary的Azkaban job 之前传递参数
 subtitle:   Azakaban job paramter 传递
 date:       2019-03-11             
-author:     kliang                  
+author:     KL                  
 header-img: img/post-bg-2015.jpg    
 catalog: true                      
 tags:                            

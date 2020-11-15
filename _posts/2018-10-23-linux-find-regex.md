@@ -3,7 +3,7 @@ layout:     post
 title:      linux find * 和 *? 的区别
 subtitle:   linux find 默认正则语法规则
 date:       2018-10-23             
-author:     kliang                  
+author:     KL                  
 header-img: img/post-bg-2015.jpg    
 catalog: true                      
 tags:                            

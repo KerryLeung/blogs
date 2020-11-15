@@ -3,7 +3,7 @@ layout:     post
 title:      Clickhouse集成kafka流数据实践
 subtitle:   实时数据导入
 date:       2020-10-29             
-author:     kliang                  
+author:     KL                  
 header-img: img/post-bg-2015.jpg    
 catalog: true                      
 tags:                            

@@ -3,7 +3,7 @@ layout:     post                    # 使用的布局（不需要改）
 title:      golang cron包源码解析          # 标题 
 subtitle:   第三方golang代码库源码阅读 #副标题
 date:       2018-07-27              # 时间
-author:     kliang                      # 作者
+author:     KL                      # 作者
 header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签

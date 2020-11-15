@@ -3,7 +3,7 @@ layout:     post
 title:      GOROOT，GOPATH，GOVENDOER           
 subtitle:   区别于使用
 date:       2018-08-18              
-author:     kliang                  
+author:     KL                  
 header-img: img/post-bg-2015.jpg    
 catalog: true                      
 tags:                            

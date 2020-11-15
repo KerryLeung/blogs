@@ -3,7 +3,7 @@ layout:     post
 title:      Go fallthrough关键字 and label break
 subtitle:   Go语法
 date:       2019-11-26            
-author:     kliang                  
+author:     KL                  
 header-img: img/post-bg-2015.jpg    
 catalog: true                      
 tags:                            

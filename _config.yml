@@ -5,9 +5,9 @@ header-img: img/post-bg-desk.jpg
 email: langyanmudi@gmail.com
 description: "learn practice and sharing"
 keyword: "KL, KL Blog, KL的博客, golang, 结构"
-url: " https://kiwi-lemon.github.io/newdeamon.github.io/"          # your host, for absolute URL
+url: "https://kerryleung.github.io/blogs/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/Kiwi-lemon/newdeamon.github.io" # you code repository
+github_repo: "https://kerryleung.github.io/blogs/" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -18,7 +18,7 @@ sidebar-avatar: /img/about-me.jpg      # use absolute URL, seeing it's used in b
 
 # SNS settings
 RSS: false
-github_username: newdeamon
+github_username: KerryLeung
 
 
 # Build settings
@@ -48,9 +48,9 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: 03b338318269200dc198                            #生成的clientID
   clientSecret: 576281d167fa3bab3e243aa9d21538dc9e938d5c    #生成的clientSecret
-  repo: newdeamon.github.io    #仓库名称
-  owner: newdeamon    #github用户名
-  admin: newdeamon
+  repo: kerryleung.github.io    #仓库名称
+  owner: kerryleung    #github用户名
+  admin: kerryleung
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 

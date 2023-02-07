@@ -4,7 +4,7 @@ title:      Golang Interface{} 与 nil           # 标题
 subtitle:   interface{}的实现 #副标题
 date:       2018-07-11              # 时间
 author:     Kerry                   # 作者
-header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
+header-img: blogs/img/post-bg-2015.jpg    #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签
     - golang

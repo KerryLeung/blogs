@@ -1,7 +1,7 @@
 # Site settings
 title: Note for learning
 SEOTitle: keep practicing | Tech Blog
-header-img: img/post-bg-desk.jpg
+header-img: /blogs/img/post-bg-desk.jpg
 email: langyanmudi@gmail.com
 description: "learn practice and sharing"
 keyword: "KL, KL Blog, KL的博客, golang, 结构"
@@ -12,7 +12,7 @@ github_repo: "https://kerryleung.github.io/blogs/" # you code repository
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "The way to succeed"
-sidebar-avatar: /img/about-me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /blogs/img/about-me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 

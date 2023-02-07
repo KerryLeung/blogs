@@ -6,7 +6,7 @@ email: langyanmudi@gmail.com
 description: "learn practice and sharing"
 keyword: "KL, KL Blog, KL的博客, golang, 结构"
 url: "https://kerryleung.github.io/blogs/"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/blogs"      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://kerryleung.github.io/blogs/" # you code repository
 
 # Sidebar settings
@@ -55,7 +55,6 @@ gitalk:
 
 
 # 统计
-
 # Analytics settings
 # Baidu Analytics
 ba_track_id: 001115390fb038ed61c786adec43ac07

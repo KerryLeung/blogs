@@ -63,5 +63,20 @@ done
 ```
 
 ## summary
-fallthrough的关键字可以帮你执行完swtich case的匹配逻辑分支之后，强制执行下一个逻辑分支，所以用的时候不能依赖于case分支的判断
-的
+fallthrough的关键字可以帮你执行完swtich case的匹配逻辑分支之后，强制执行下一个逻辑分支，所以用的时候不能依赖于case分支的判断，最后改写下最后一个sample code，可以改成
+```
+	i := 3
+	switch {
+	case i > 1:
+		fmt.Println("print 1")
+		fallthrough
+	case i > 4:
+	        if i > 4 {
+		  fmt.Println("print 4")
+	        }
+	default:
+		fmt.Println("default print")
+	}
+	fmt.Println("done")
+```
+如果要写的优雅，建议把fallthrough 放到default statement之前的case语句中，同时在default 语句中加逻辑判断。

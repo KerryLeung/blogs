@@ -4,7 +4,7 @@ title:      Golang fallthrough keyword
 subtitle:   practice
 date:       2023-02-07             
 author:     KL                  
-header-img: blogs/img/post-bg-desk.png    
+header-img: img/post-bg-desk.png    
 catalog: true                      
 tags:                            
     - golang

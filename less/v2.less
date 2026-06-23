@@ -1,0 +1,241 @@
+// ============================================================
+//  Blog Home v2 — whole-site redesign (cream paper / terracotta)
+//  Imported LAST from hux-blog.less so it governs the cascade.
+//  Source of truth: Claude Design "Blog Home v2".
+// ============================================================
+
+@v2-paper:    #faf8f4;
+@v2-ink:      #1c1b19;
+@v2-muted:    #6b665d;
+@v2-faint:    #b3ada2;
+@v2-line:     rgba(28,27,25,0.08);
+@v2-line2:    rgba(28,27,25,0.12);
+@v2-accent:   #b35e3f;   // ≈ oklch(0.58 0.13 40), sRGB for LESS color math
+@v2-accent-d: #984d31;
+@v2-card:     #ffffff;
+
+@v2-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+@v2-mono:  'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+@v2-sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+
+// ---- Base -------------------------------------------------
+body{
+	background: @v2-paper !important;
+	color: @v2-ink;
+	font-family: @v2-sans;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: @v2-serif;
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	color: @v2-ink;
+}
+a{ color: @v2-ink; &:hover,&:focus{ color: @v2-accent; } }
+::selection{ background: @v2-accent; color:#fff; }
+::-moz-selection{ background: @v2-accent; color:#fff; }
+
+// ---- Site header (nav.html) -------------------------------
+.site-nav{
+	position: sticky; top: 0; z-index: 20;
+	background: rgba(250,248,244,0.85);
+	-webkit-backdrop-filter: saturate(1.2) blur(10px);
+	backdrop-filter: saturate(1.2) blur(10px);
+	border-bottom: 1px solid @v2-line;
+}
+.site-nav__inner{
+	max-width: 860px; margin: 0 auto; padding: 16px 28px;
+	display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+.site-nav__brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit; }
+.site-nav__chip{ width:22px; height:22px; border-radius:6px; background:@v2-accent; display:inline-block; }
+.site-nav__name{ font-family:@v2-sans; font-weight:600; font-size:15px; letter-spacing:-0.01em; }
+.site-nav__links{ display:flex; align-items:center; gap:4px; font-family:@v2-mono; font-size:12.5px; }
+.site-nav__links a{
+	text-decoration:none; color:@v2-muted; padding:7px 12px; border-radius:7px; transition:all .15s;
+	&:hover{ background:rgba(28,27,25,0.05); color:@v2-ink; }
+	&.is-active{ color:@v2-ink; }
+}
+
+// ---- Shared content frame ---------------------------------
+.v2-wrap{ max-width:860px; margin:0 auto; padding:0 28px; }
+
+// ---- Home: masthead ---------------------------------------
+.v2-masthead{ padding:72px 0 40px; border-bottom:1px solid @v2-line; }
+.v2-masthead h1{
+	margin:0; font-family:@v2-serif; font-weight:500; font-size:40px;
+	line-height:1.1; letter-spacing:-0.02em; max-width:640px; text-wrap:balance;
+}
+.v2-masthead p{ margin:18px 0 0; font-size:16.5px; line-height:1.55; color:@v2-muted; max-width:560px; }
+
+// ---- Home: tag filter row ---------------------------------
+.v2-tagrow{ display:flex; flex-wrap:wrap; gap:8px; padding:24px 0 8px; }
+.v2-tag{
+	font-family:@v2-mono; font-size:12px; color:@v2-muted; text-decoration:none;
+	padding:6px 11px; border:1px solid @v2-line2; border-radius:999px; cursor:pointer; transition:all .15s;
+	&:hover{ border-color:@v2-accent; color:@v2-accent; }
+	.count{ opacity:.5; }
+}
+
+// ---- Home: year-grouped post list -------------------------
+.v2-posts{ padding:12px 0 40px; }
+.v2-group{
+	display:grid; grid-template-columns:64px 1fr; gap:8px;
+	padding:28px 0; border-top:1px solid @v2-line;
+}
+.v2-group__year{
+	font-family:@v2-mono; font-size:12px; color:@v2-faint;
+	padding-top:6px; position:sticky; top:80px; align-self:start;
+}
+.v2-post{
+	display:block; text-decoration:none; color:inherit;
+	padding:16px; margin:0 -16px; border-radius:12px; transition:background .15s;
+	&:hover{ background:@v2-card; box-shadow:0 1px 2px rgba(28,27,25,0.04), 0 8px 24px -12px rgba(28,27,25,0.12); }
+}
+.v2-post__meta{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; }
+.v2-post__tag{ font-family:@v2-mono; font-size:11.5px; color:@v2-accent; text-transform:uppercase; letter-spacing:.04em; }
+.v2-post__date{ font-family:@v2-mono; font-size:11.5px; color:@v2-faint; }
+.v2-post__title{ margin:8px 0 0; font-family:@v2-serif; font-weight:500; font-size:23px; line-height:1.25; letter-spacing:-0.01em; }
+.v2-post__preview{
+	margin:7px 0 0; font-size:15px; line-height:1.6; color:@v2-muted;
+	display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+@media (max-width:600px){
+	.v2-group{ grid-template-columns:1fr; }
+	.v2-group__year{ position:static; padding-top:0; margin-bottom:4px; }
+	.v2-masthead h1{ font-size:32px; }
+}
+
+// ---- Slim footer (footer.html) ----------------------------
+.site-footer{ border-top:1px solid @v2-line; margin-top:24px; }
+.site-footer__inner{
+	max-width:860px; margin:0 auto; padding:32px 28px 48px;
+	display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+	font-family:@v2-mono; font-size:12px; color:@v2-faint;
+	a{ color:@v2-muted; text-decoration:none; &:hover{ color:@v2-accent; } }
+}
+.site-footer__links{ display:flex; gap:18px; }
+
+// ============================================================
+//  Legacy pages (post / about / tags) — adopt the v2 language
+//  by overriding the old hero + component styles.
+// ============================================================
+
+// Turn the full-bleed gradient hero into a quiet cream masthead.
+.intro-header{
+	background:@v2-paper !important;
+	background-image:none !important;
+	margin-bottom:0 !important;
+	&::before{ display:none !important; }
+	.site-heading, .post-heading, .page-heading{
+		color:@v2-ink !important;
+		padding:60px 0 32px !important;
+		border-bottom:1px solid @v2-line;
+		text-align:left;
+	}
+	.site-heading h1, .post-heading h1, .page-heading h1{
+		color:@v2-ink !important; font-family:@v2-serif; font-weight:500;
+		font-size:34px; letter-spacing:-0.02em;
+		@media (min-width:768px){ font-size:44px; }
+	}
+	.subheading{
+		color:@v2-muted !important; font-family:@v2-sans !important;
+		text-transform:none !important; letter-spacing:0 !important;
+		font-weight:400 !important; font-size:16.5px !important; margin-top:14px !important;
+	}
+	.post-heading .meta{
+		color:@v2-faint !important; font-family:@v2-mono; font-size:12.5px; font-style:normal; font-weight:400;
+		a{ color:@v2-muted; }
+	}
+	// Bilingual EN/ZH toggle
+	.lang-switch{ margin-top:16px; display:flex; gap:6px; font-family:@v2-mono; font-size:12px; }
+	.lang-switch__current{
+		color:@v2-ink; border:1px solid @v2-line2; border-radius:999px;
+		padding:3px 11px; background:rgba(28,27,25,0.05);
+	}
+	.lang-switch__other{
+		color:@v2-muted; border:1px solid @v2-line2; border-radius:999px;
+		padding:3px 11px; text-decoration:none; transition:all .15s;
+		&:hover,&:focus{ border-color:@v2-accent; color:@v2-accent; background:transparent; }
+	}
+	.tags a, .tags .tag{
+		font-family:@v2-mono; font-size:11.5px; border:1px solid @v2-line2;
+		color:@v2-muted; background:transparent;
+		&:hover,&:active{ border-color:@v2-accent; color:@v2-accent; background:transparent; }
+	}
+}
+
+// In-post typography & blocks
+.post-container{
+	font-family:@v2-sans; color:@v2-ink;
+	h1,h2,h3,h4,h5,h6{ font-family:@v2-serif; font-weight:600; color:@v2-ink; }
+	a{
+		color:@v2-accent; border-bottom:1px solid fade(@v2-accent,30%);
+		&:hover,&:focus{ color:@v2-accent-d; border-bottom-color:@v2-accent-d; }
+	}
+	pre{
+		background:#fff; border:1px solid @v2-line2; border-radius:12px;
+		padding:16px 18px; font-family:@v2-mono; font-size:13px; line-height:1.6;
+	}
+	:not(pre) > code{
+		font-family:@v2-mono; background:fade(@v2-accent,8%); color:@v2-accent-d;
+		border-radius:6px; padding:2px 7px; font-size:.85em;
+	}
+	blockquote{
+		border-left:3px solid fade(@v2-accent,55%); background:fade(@v2-accent,5%);
+		border-radius:0 10px 10px 0; padding:14px 20px; color:@v2-muted; font-style:normal;
+	}
+}
+
+// Side catalog (post TOC)
+.side-catalog{
+	.catalog-toggle, .catalog-body a{ font-family:@v2-mono; font-size:12px; }
+	.catalog-body{
+		a{ color:@v2-muted; &:hover{ color:@v2-accent; } }
+		.active{
+			background:fade(@v2-accent,7%);
+			a{ color:@v2-accent !important; border-left-color:@v2-accent; }
+		}
+	}
+}
+
+// Pager (post prev/next)
+.pager li{
+	> a, > span{
+		font-family:@v2-mono; text-transform:none; letter-spacing:0; font-weight:500;
+		font-size:12px; border:1px solid @v2-line2; border-radius:10px; background:#fff; color:@v2-ink;
+	}
+	> a:hover, > a:focus{
+		background:@v2-accent; border-color:@v2-accent; color:#fff; box-shadow:none;
+		> span{ color:#fff; }
+	}
+}
+
+// Tags page
+#tag_cloud a, .one-tag-list ~ * .tags a{
+	font-family:@v2-mono; border:1px solid @v2-line2; background:transparent; color:@v2-muted;
+	&:hover,&:active{ background:transparent !important; border-color:@v2-accent; color:@v2-accent; }
+}
+.listing-seperator{
+	color:@v2-accent !important; font-family:@v2-serif;
+	.tag-text{ font-family:@v2-serif; }
+}
+// Flatten the legacy preview cards used on the tags page.
+.post-preview{
+	background:transparent; border:none; box-shadow:none; border-radius:0; padding:10px 0;
+	&:hover{ transform:none; box-shadow:none; border:none; }
+	.post-title{ font-family:@v2-serif; font-weight:500; }
+	.post-meta{ font-family:@v2-mono; }
+}
+
+// About-page sidebar
+.sidebar-container{
+	h5{ font-family:@v2-mono; color:@v2-ink; letter-spacing:.08em; font-weight:500; }
+	a{ color:@v2-muted !important; &:hover,&:active{ color:@v2-accent !important; } }
+	.tags a{ font-family:@v2-mono; border-color:@v2-line2; color:@v2-muted;
+		&:hover{ border-color:@v2-accent; color:@v2-accent; } }
+}
+
+// Footer (legacy element rules → quiet)
+footer .copyright{ color:@v2-faint; a{ color:@v2-muted; &:hover{ color:@v2-accent; } } }

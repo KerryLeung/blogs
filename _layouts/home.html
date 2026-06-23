@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<main class="v2-wrap">
+
+  <!-- Masthead -->
+  <section class="v2-masthead">
+    <h1>{{ page.headline | default: site.title }}</h1>
+    {% if page.tagline %}<p>{{ page.tagline }}</p>{% endif %}
+  </section>
+
+  <!-- Tag filter row -->
+  <div class="v2-tagrow">
+    {% for tag in site.tags %}
+    <a class="v2-tag" href="{{ site.baseurl }}/tags/#{{ tag[0] }}">{{ tag[0] }} <span class="count">{{ tag[1].size }}</span></a>
+    {% endfor %}
+  </div>
+
+  <!-- Year-grouped post list -->
+  <section class="v2-posts">
+    {% assign groups = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+    {% for g in groups %}
+    <div class="v2-group">
+      <div class="v2-group__year">{{ g.name }}</div>
+      <div>
+        {% for post in g.items %}
+        <a class="v2-post" href="{{ post.url | prepend: site.baseurl }}">
+          <div class="v2-post__meta">
+            {% if post.tags.size > 0 %}<span class="v2-post__tag">{{ post.tags | first }}</span>{% endif %}
+            <span class="v2-post__date">{{ post.date | date: "%b %d" }}</span>
+          </div>
+          <h2 class="v2-post__title">{{ post.title }}</h2>
+          <p class="v2-post__preview">{% if post.subtitle %}{{ post.subtitle }} — {% endif %}{{ post.content | strip_html | truncatewords: 28 }}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+</main>

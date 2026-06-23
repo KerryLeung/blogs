@@ -1,0 +1,14 @@
+<!-- Site header (Blog v2) -->
+<header class="site-nav">
+    <div class="site-nav__inner">
+        <a class="site-nav__brand" href="{{ site.baseurl }}/">
+            <span class="site-nav__chip"></span>
+            <span class="site-nav__name">{{ site.title }}</span>
+        </a>
+        <nav class="site-nav__links">
+            <a href="{{ site.baseurl }}/"{% if page.layout == 'home' %} class="is-active"{% endif %}>Writing</a>
+            <a href="{{ site.baseurl }}/tags/">Tags</a>
+            <a href="{{ site.baseurl }}/about/">About</a>
+        </nav>
+    </div>
+</header>

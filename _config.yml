@@ -1,0 +1,104 @@
+# Site settings
+title: Note for learning
+SEOTitle: keep practicing | Tech Blog
+header-img: img/post-bg-desk.png
+email: langyanmudi@gmail.com
+description: "learn practice and sharing"
+keyword: "KL, KL Blog, KL的博客, golang, backend, bigdata"
+author: KL
+lang: en                                              # default language (jekyll-seo-tag og:locale)
+url: "https://kerryleung.github.io"          # ORIGIN only; baseurl adds /blogs. (absolute_url = url + baseurl + page.url)
+baseurl: "/blogs"      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://kerryleung.github.io/blogs/" # you code repository
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "The way to succeed"
+sidebar-avatar: /blogs/img/about-me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# SNS settings
+RSS: false
+github_username: KerryLeung
+
+
+# Build settings
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Plugins (Jekyll 4 key; all whitelisted on native GitHub Pages)
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+# Gitalk retired — replaced by Giscus (see `giscus:` below). The old OAuth
+# clientSecret was removed from config; revoke that OAuth app on GitHub since it
+# still exists in git history.
+
+# Giscus
+giscus:
+  enable: true
+  repo: "KerryLeung/blogs"
+  repo_id: "MDEwOlJlcG9zaXRvcnkzMDc3MzI0NDY="
+  category: "General"
+  category_id: "DIC_kwDOElef3s4C_noC"
+  mapping: "pathname"
+  theme: "preferred_color_scheme"
+  reactions_enabled: "1"
+  emit_metadata: "0"
+  input_position: "bottom"
+  lang: "en"
+
+# 统计
+# Analytics settings
+# Baidu Analytics (retired in favor of Cloudflare Web Analytics)
+ba_track_id:
+
+# Google Analytics (retired — was Universal Analytics, sunset by Google in 2023)
+ga_track_id:
+ga_domain: auto
+
+# Cloudflare Web Analytics (privacy-friendly, no cookies)
+cloudflare_analytics: "1e2b66746e8549ffbb9a251e68b3c4a3"
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+# Friends
+friends: [
+    {
+        title: "Golang",
+        href: "https://golang.org/doc/"
+    },{
+        title: "Google Developer",
+        href: "https://developer.google.com/"
+    }
+]
+
+theme: jekyll-theme-hacker
